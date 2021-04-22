@@ -10,10 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var nomeTextField: UITextField!
+    @IBOutlet var felicidadeTextField: UITextField!
+    
     @IBAction func adicionar(_ sender: Any) {
+        let nome = nomeTextField.text
+        let felicidade = felicidadeTextField.text
         
-        let nome = "churros"
-        let felicidade = "5"
         print("comi \(nome) e fiquei com felicidade: \(felicidade)")
     }
 }
