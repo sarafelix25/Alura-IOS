@@ -11,10 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBAction func adicionar(_ sender: Any) {
-        print("alimento: --")
+        
+        let nome = "churros"
+        let felicidade = "5"
+        print("comi \(nome) e fiquei com felicidade: \(felicidade)")
     }
 }
-
-// outro jto de add botão: clicar no botão e segurar a tecla ctrl ao msm tempo e arrastar até a tela que fará o mesmo ter uma ação
-
-// obs.: lembrar de trocar de outlet para action
