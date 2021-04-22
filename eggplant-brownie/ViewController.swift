@@ -10,8 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var nomeTextField: UITextField!
-    @IBOutlet var felicidadeTextField: UITextField!
+    // outro jto de add textField: segure diretamente na caixinhha de texto e com o ctrl puxe para o código
+    
+    @IBOutlet weak var nomeTextField: UITextField!
+    
+    
+    @IBOutlet weak var felicidadeTextField: UITextField!
     
     @IBAction func adicionar(_ sender: Any) {
         let nome = nomeTextField.text
