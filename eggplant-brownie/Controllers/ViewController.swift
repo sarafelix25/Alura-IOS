@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var tableViewController: RefeicoesTableviewController?
 
     // outro jto de add textField: segure diretamente na caixinhha de texto e com o ctrl puxe para o código
     
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
         
         print("comi \(refeicao.nome) e fiquei com felicidade: \(refeicao.felicidade)")
         
-        navigationController?.popViewController(animated: <#T##Bool#>)
+        tableViewController?.add(refeicao)
+        navigationController?.popViewController(animated: true)
     }
 }
