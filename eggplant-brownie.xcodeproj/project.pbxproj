@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED0D895826337683009CB258 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D895726337683009CB258 /* Item.swift */; };
+		ED1B87C626346248008678B0 /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1B87C526346248008678B0 /* RefeicoesTableViewController.swift */; };
 		ED4305732630B88E0035A197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4305722630B88E0035A197 /* AppDelegate.swift */; };
 		ED4305752630B88E0035A197 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4305742630B88E0035A197 /* ViewController.swift */; };
 		ED4305782630B88E0035A197 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4305762630B88E0035A197 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		ED0D895726337683009CB258 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		ED1B87C526346248008678B0 /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
 		ED43056F2630B88E0035A197 /* eggplant-brownie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "eggplant-brownie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4305722630B88E0035A197 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED4305742630B88E0035A197 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				ED4305742630B88E0035A197 /* ViewController.swift */,
+				ED1B87C526346248008678B0 /* RefeicoesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				ED0D895826337683009CB258 /* Item.swift in Sources */,
 				ED4305752630B88E0035A197 /* ViewController.swift in Sources */,
+				ED1B87C626346248008678B0 /* RefeicoesTableViewController.swift in Sources */,
 				EDFAAF842633532600BD1C3D /* Refeicao.swift in Sources */,
 				ED4305732630B88E0035A197 /* AppDelegate.swift in Sources */,
 			);
