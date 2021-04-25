@@ -12,20 +12,20 @@ protocol AdicionaRefeicaoDelegate {
      func add (_ refeicao: Refeicao)
 }
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // Mark: - Atributos
     
     var delegate: AdicionaRefeicaoDelegate?
     var itens: [String] = ["Molho de tomate", "Queijo", "Molho apimentado", "Manjericão"]
  
-    // Mark: IBOutlets
+    // Mark: - IBOutlets
     
     @IBOutlet weak var nomeTextField: UITextField?
     
     @IBOutlet weak var felicidadeTextField: UITextField?
     
-    // Mark: UITableViewDataSource
+    // Mark: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itens.count
@@ -41,8 +41,20 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return celula
     }
+        
+        // MARK: - UITableViewDelegate
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            guard let celula = tableView.cellForRow(at: indexPath) else { return }
+            
+            if celula.accessoryType ==  .none {
+                celula.accessoryType = .checkmark
+            } else {
+                celula.accessoryType = .none
+            }
+        }
     
-    // Mark: IBActions
+    // Mark: - IBActions
     
     @IBAction func adicionar(_ sender: Any) {
         
