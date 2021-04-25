@@ -12,7 +12,12 @@ protocol AdicionaRefeicaoDelegate {
      func add (_ refeicao: Refeicao)
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AdicionaItensDelegate {
+    
+    // Mark: - IBOutlets
+    
+    @IBOutlet weak var itensTableView: UITableView!
+    
     
     // Mark: - Atributos
     
@@ -27,7 +32,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Mark: - IBOutlets
     
     @IBOutlet weak var nomeTextField: UITextField?
-    
     @IBOutlet weak var felicidadeTextField: UITextField?
     
     // Mark: View life cycle
@@ -38,8 +42,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @objc func adicionarItens() {
-        let adicionarItensViewController = AdicionarItensViewController()
+        let adicionarItensViewController = AdicionarItensViewController(delegate: self)
         navigationController?.pushViewController(adicionarItensViewController, animated: true)
+    }
+    
+    func add (_ item: Item){
+        itens.append(item)
+        itensTableView.reloadData()
     }
     
     // Mark: - UITableViewDataSource
