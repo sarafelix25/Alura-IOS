@@ -30,6 +30,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var felicidadeTextField: UITextField?
     
+    // Mark: View life cycle
+    
+    override func viewDidLoad() {
+        let botaoAdicionaItem = UIBarButtonItem(title: "adicionar", style: .plain, target: self, action: #selector("adicionarItens"))
+        navigationItem.rightBarButtonItem = botaoAdicionaItem
+    }
+    
+    @objc func adicionarItens () {
+        let adicionarItensViewController = AdicionarItensViewController()
+    }
+    
     // Mark: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,12 +76,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 if let position = itensSelecionados.index(of: item) {
                 
                 itensSelecionados.remove(at: position)
-                    
-                    // Teste
-                    
-                    for itemSelecionados in itensSelecionados{
-                        print(itemSelecionados.nome)
-                    }
             }
         }
     }
