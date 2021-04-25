@@ -9,7 +9,13 @@
 import UIKit
 
 class AdicionarItensViewController: UIViewController {
+    
+    // Mark: - IBOutlets
 
+    @IBOutlet weak var nomeTextField: UITextField!
+    
+    @IBOutlet weak var caloriasTextField: UITextField!
+    
     
     // Mark: - View life cycle
     
@@ -20,6 +26,15 @@ class AdicionarItensViewController: UIViewController {
     // Mark: - IBAction
     
     @IBAction func adicionarItem(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        
+        guard let nome = nomeTextField.text, let calorias = caloriasTextField.text else {
+            return
+        }
+        
+        if let numeroDeCalorias = Double(calorias){
+            
+            let item = Item(nome: nome, calorias: numeroDeCalorias)
+            navigationController?.popViewController(animated: true)
+        }
     }
 }
