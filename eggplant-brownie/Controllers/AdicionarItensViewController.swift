@@ -8,10 +8,18 @@
 
 import UIKit
 
-class AdicionarViewController: UIViewController {
+class AdicionarItensViewController: UIViewController {
 
+    
+    // Mark: - View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    // Mark: - IBAction
+    
+    @IBAction func adicionarItem(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
 }
