@@ -51,15 +51,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             guard let celula = tableView.cellForRow(at: indexPath) else { return }
-            
+
             if celula.accessoryType ==  .none {
                 celula.accessoryType = .checkmark
-                
+
                 let linhaDaTabela = indexPath.row
                 itensSelecionados.append(itens[linhaDaTabela])
             } else {
                 celula.accessoryType = .none
-                
+    
                 let item = itens[indexPath.row]
                 
                 if let position = itensSelecionados.index(of: item) {
