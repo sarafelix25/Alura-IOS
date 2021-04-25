@@ -8,28 +8,43 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    var tableViewController: RefeicoesTableviewController?
+protocol AdicionaRefeicaoDelegate {
+     func add (_ refeicao: Refeicao)
+}
 
-    // outro jto de add textField: segure diretamente na caixinhha de texto e com o ctrl puxe para o código
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    // Mark: - Atributos
+    
+    var delegate: AdicionaRefeicaoDelegate?
+    var itens: [String] = ["Molho de tomate", "Queijo", "Molho apimentado", "Manjericão"]
+ 
+    // Mark: IBOutlets
     
     @IBOutlet weak var nomeTextField: UITextField?
     
     @IBOutlet weak var felicidadeTextField: UITextField?
     
-    @IBAction func adicionar(_ sender: Any) {
+    // Mark: UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return itens.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let celula = UITableViewCell(style: .default, reuseIdentifier: nil)
         
-//        if let nomeDaRefeicao = nomeTextField?.text, let felicidadeDaRefeicao = felicidadeTextField?.text {
-//
-//            let nome = nomeDaRefeicao
-//            if let felicidade = Int(felicidadeDaRefeicao) {
-//                let refeicao = Refeicao(nome: nome, felicidade: felicidade)
-//
-//                print("comi \(refeicao.nome) e fiquei com felicidade: \(refeicao.felicidade)")
-//            } else{
-//                print("erro ao tentar criar a refeição")
-//            }
+        let linhaDaTabela = indexPath.row
+        let item = itens[linhaDaTabela]
+        
+        celula.textLabel?.text = item
+        
+        return celula
+    }
+    
+    // Mark: IBActions
+    
+    @IBAction func adicionar(_ sender: Any) {
         
         guard let nomeDaRefeicao = nomeTextField?.text else {
             return
@@ -43,7 +58,7 @@ class ViewController: UIViewController {
         
         print("comi \(refeicao.nome) e fiquei com felicidade: \(refeicao.felicidade)")
         
-        tableViewController?.add(refeicao)
+        delegate?.add(refeicao)
         navigationController?.popViewController(animated: true)
     }
 }
